@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class User  {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,6 +22,14 @@ public class User  {
     private String encryptedPassword;
     private Boolean enabled = true;
 
+
+    private User(){
+
+    }
+
+    public User(String username) {
+        this.username = username;
+    }
 
     public Integer getId() {
         return id;
